@@ -30,13 +30,14 @@ class CounterViewController: UIViewController  {
         //for some reason if set to TRUE inside PLVC, it carries over creating minor unwanted performance. This sets back to false.
         //navigationController?.hidesBarsOnSwipe = false
         
-        //creates a custom back button for the view controller. Uses a custom func titled saveAndGoBack
-        let backButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveAndGoBack:")
-        self.navigationItem.leftBarButtonItem = backButton
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancel:")
-        self.navigationItem.rightBarButtonItem = cancelButton
+        //sets the title of the counter view to be the currently selected player
         title = self.currentPlayer.valueForKeyPath("name") as? String
         
+        //creates a custom back button for the view controller. Uses a custom func titled saveAndGoBack
+        let backButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveAndGoBack:")
+        self.navigationItem.rightBarButtonItem = backButton
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancel:")
+        self.navigationItem.leftBarButtonItem = cancelButton
         
     }
     

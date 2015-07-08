@@ -26,7 +26,7 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func addNewPlayerName(sender: AnyObject) {
         var alert = UIAlertController(title: "New Player",
-            message: "",
+            message: nil,
             preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (UIAlertAction) -> Void in
@@ -51,33 +51,6 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    //Implementing the Add Name Button Action
-//    @IBAction func addName(sender: AnyObject) {
-//        var alert = UIAlertController(title: "Player Name",
-//            message: "Add New Player",
-//            preferredStyle: .Alert)
-//        
-//        let saveAction = UIAlertAction(title: "Save", style: .Default) { (UIAlertAction) -> Void in
-//            let textField = alert.textFields![0] as! UITextField
-//            
-//            //use saveName func to to save to Core Data
-//            self.saveName(textField.text)
-//            self.tableView.reloadData()
-//        }
-//        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
-//            (UIAlertAction) -> Void in
-//        }
-//        
-//        alert.addTextFieldWithConfigurationHandler {
-//            (textField: UITextField!) -> Void in
-//        }
-//        
-//        alert.addAction(saveAction)
-//        alert.addAction(cancelAction)
-//        
-//        presentViewController(alert, animated: true, completion: nil)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,35 +58,18 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         //hides the menu bar when scrolling down
         //navigationController?.hidesBarsOnSwipe = true
         
-        
-        //Create a view frame variable then adjust the frame down 20 points so cells don't fall under the menu bar
-//        var viewFrame = self.tableView.frame
-//        viewFrame.origin.y += 20
-        
-//        //sets the row height to automatic FIX FIX FIX FIX FIX FIX FIX
-//        //
-//        //
-//        //
-//        tableView.estimatedRowHeight = 85
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 85
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //prints managedObjectContext to Console
         println(managedObjectContext)
-        
-//        let addButton = UIButton(frame: CGRectMake(0, UIScreen.mainScreen().bounds.size.height - 36, UIScreen.mainScreen().bounds.size.width, 44))
-//        addButton.setTitle("Add Player", forState: .Normal)
-//        addButton.backgroundColor = UIColor(red: 0.5, green: 0.9, blue: 0.5, alpha: 1.0)
-//        addButton.addTarget(self, action: "addNewPlayer", forControlEvents: .TouchUpInside)
-//        self.tableView.addSubview(addButton)
-//        viewFrame.size.height -= (20 + addButton.frame.size.height)
         
         title = "Pitch Counter Pro"
         self.tableView.reloadData()
     }
     
-//    func addNewPlayer() {
-//
-//    }
+    
+    
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -152,13 +108,18 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+//    func resetNumberOfPitches(cell:CustomPitcherListCell, indexPath: NSIndexPath) {
+//        let thisPerson = people[indexPath.row] as! Person
+//        thisPerson.numberOfPitches = 0
+//        
+//    }
+    
     func setNumberOfPitchesForCell(cell:CustomPitcherListCell, indexPath: NSIndexPath) {
         let thisPerson = people[indexPath.row] as! Person
         var totalNumberPitchedInt = thisPerson.valueForKey("numberOfPitches") as? Int
         var totalNumberPitchedString:String = String(format: "%i", totalNumberPitchedInt!)
         cell.totalNumberPitchedOutlet.text = totalNumberPitchedString
     }
-    
     
     func saveName(name: String) {
         //step 1 : Instantiate
