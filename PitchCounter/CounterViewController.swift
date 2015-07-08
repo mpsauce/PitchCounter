@@ -27,10 +27,21 @@ class CounterViewController: UIViewController  {
         // prints to console core data entity to make sure this view controller received the proper data.
         println(currentPlayer)
         
+        //for some reason if set to TRUE inside PLVC, it carries over creating minor unwanted performance. This sets back to false.
+        navigationController?.hidesBarsOnSwipe = false
+        
         //creates a custom back button for the view controller. Uses a custom func titled saveAndGoBack
         let backButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveAndGoBack:")
         self.navigationItem.leftBarButtonItem = backButton
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancel:")
+        self.navigationItem.rightBarButtonItem = cancelButton
         title = self.currentPlayer.valueForKeyPath("name") as? String
+        
+        
+    }
+    
+    func cancel(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     //custom func to add and/or save new data and pop the view controller
