@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B072A6BC-6C41-47AC-81AB-7B97F5531060</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PitchCounter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>826205E9AA4F9C47A4E9DFD207A7A7C0A1BDAF34</key>
+		<string>https://github.com/mpsauce/PitchCounter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PitchCounter.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>826205E9AA4F9C47A4E9DFD207A7A7C0A1BDAF34</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mpsauce/PitchCounter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>826205E9AA4F9C47A4E9DFD207A7A7C0A1BDAF34</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>826205E9AA4F9C47A4E9DFD207A7A7C0A1BDAF34</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PitchCounter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
