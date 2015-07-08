@@ -28,7 +28,7 @@ class CounterViewController: UIViewController  {
         println(currentPlayer)
         
         //for some reason if set to TRUE inside PLVC, it carries over creating minor unwanted performance. This sets back to false.
-        navigationController?.hidesBarsOnSwipe = false
+        //navigationController?.hidesBarsOnSwipe = false
         
         //creates a custom back button for the view controller. Uses a custom func titled saveAndGoBack
         let backButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveAndGoBack:")

@@ -83,7 +83,7 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         //hides the menu bar when scrolling down
-        navigationController?.hidesBarsOnSwipe = true
+        //navigationController?.hidesBarsOnSwipe = true
         
         
         //Create a view frame variable then adjust the frame down 20 points so cells don't fall under the menu bar
