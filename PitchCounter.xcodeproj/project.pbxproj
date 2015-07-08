@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		A909883D1B2B2D34003A88F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909883C1B2B2D34003A88F6 /* AppDelegate.swift */; };
 		A90988401B2B2D34003A88F6 /* PitchCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A909883E1B2B2D34003A88F6 /* PitchCounter.xcdatamodeld */; };
-		A90988421B2B2D34003A88F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90988411B2B2D34003A88F6 /* ViewController.swift */; };
+		A90988421B2B2D34003A88F6 /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90988411B2B2D34003A88F6 /* PlayerListViewController.swift */; };
 		A90988451B2B2D34003A88F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90988431B2B2D34003A88F6 /* Main.storyboard */; };
 		A90988471B2B2D34003A88F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90988461B2B2D34003A88F6 /* Images.xcassets */; };
 		A909884A1B2B2D34003A88F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90988481B2B2D34003A88F6 /* LaunchScreen.xib */; };
 		A90988561B2B2D34003A88F6 /* PitchCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90988551B2B2D34003A88F6 /* PitchCounterTests.swift */; };
+		A95EFF651B33276B000FC532 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EFF641B33276B000FC532 /* CounterViewController.swift */; };
+		A95EFF691B334B67000FC532 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EFF681B334B67000FC532 /* Person.swift */; };
+		A95EFF6B1B335A03000FC532 /* CustomPitcherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EFF6A1B335A03000FC532 /* CustomPitcherListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +34,16 @@
 		A909883B1B2B2D34003A88F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A909883C1B2B2D34003A88F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A909883F1B2B2D34003A88F6 /* PitchCounter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PitchCounter.xcdatamodel; sourceTree = "<group>"; };
-		A90988411B2B2D34003A88F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A90988411B2B2D34003A88F6 /* PlayerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewController.swift; sourceTree = "<group>"; };
 		A90988441B2B2D34003A88F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A90988461B2B2D34003A88F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A90988491B2B2D34003A88F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A909884F1B2B2D34003A88F6 /* PitchCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90988541B2B2D34003A88F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90988551B2B2D34003A88F6 /* PitchCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCounterTests.swift; sourceTree = "<group>"; };
+		A95EFF641B33276B000FC532 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		A95EFF681B334B67000FC532 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
+		A95EFF6A1B335A03000FC532 /* CustomPitcherListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPitcherListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,12 @@
 		A90988391B2B2D34003A88F6 /* PitchCounter */ = {
 			isa = PBXGroup;
 			children = (
+				A95EFF681B334B67000FC532 /* Person.swift */,
 				A909883C1B2B2D34003A88F6 /* AppDelegate.swift */,
-				A90988411B2B2D34003A88F6 /* ViewController.swift */,
+				A90988411B2B2D34003A88F6 /* PlayerListViewController.swift */,
 				A90988431B2B2D34003A88F6 /* Main.storyboard */,
+				A95EFF6A1B335A03000FC532 /* CustomPitcherListCell.swift */,
+				A95EFF641B33276B000FC532 /* CounterViewController.swift */,
 				A90988461B2B2D34003A88F6 /* Images.xcassets */,
 				A90988481B2B2D34003A88F6 /* LaunchScreen.xib */,
 				A909883E1B2B2D34003A88F6 /* PitchCounter.xcdatamodeld */,
@@ -164,6 +173,7 @@
 				TargetAttributes = {
 					A90988361B2B2D34003A88F6 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 78N35Y6K9P;
 					};
 					A909884E1B2B2D34003A88F6 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -215,7 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90988421B2B2D34003A88F6 /* ViewController.swift in Sources */,
+				A95EFF691B334B67000FC532 /* Person.swift in Sources */,
+				A95EFF651B33276B000FC532 /* CounterViewController.swift in Sources */,
+				A95EFF6B1B335A03000FC532 /* CustomPitcherListCell.swift in Sources */,
+				A90988421B2B2D34003A88F6 /* PlayerListViewController.swift in Sources */,
 				A909883D1B2B2D34003A88F6 /* AppDelegate.swift in Sources */,
 				A90988401B2B2D34003A88F6 /* PitchCounter.xcdatamodeld in Sources */,
 			);
@@ -344,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PitchCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PitchCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +428,7 @@
 				A909885B1B2B2D34003A88F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A909885C1B2B2D34003A88F6 /* Build configuration list for PBXNativeTarget "PitchCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +437,7 @@
 				A909885E1B2B2D34003A88F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
