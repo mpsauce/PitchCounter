@@ -29,6 +29,10 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
             message: nil,
             preferredStyle: .Alert)
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
+            (UIAlertAction) -> Void in
+        }
+        
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (UIAlertAction) -> Void in
             let textField = alert.textFields![0] as! UITextField
             
@@ -36,10 +40,7 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
             self.saveName(textField.text)
             self.tableView.reloadData()
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
-            (UIAlertAction) -> Void in
-        }
+
         
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField!) -> Void in
