@@ -18,13 +18,13 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBOutlet weak var tableView: UITableView!
-    
     //storing Person entities instead of just names so this Mutable Array is called people
     //instead of names and is of NSManagedObject instead of a String
     var people = [NSManagedObject]()
+    var count = 0
+    var currentPerson: NSManagedObject!
     
-    
-    @IBAction func addNewPlayerName(sender: AnyObject) {
+    @IBAction func addPlayer(sender: UIBarButtonItem) {
         var alert = UIAlertController(title: "New Player",
             message: nil,
             preferredStyle: .Alert)
@@ -40,7 +40,6 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
             self.saveName(textField.text)
             self.tableView.reloadData()
         }
-
         
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField!) -> Void in
@@ -50,7 +49,35 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         alert.addAction(cancelAction)
         
         presentViewController(alert, animated: true, completion: nil)
+        
     }
+    
+//    @IBAction func addNewPlayerName(sender: AnyObject) {
+//        var alert = UIAlertController(title: "New Player",
+//            message: nil,
+//            preferredStyle: .Alert)
+//        
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
+//            (UIAlertAction) -> Void in
+//        }
+//        
+//        let saveAction = UIAlertAction(title: "Save", style: .Default) { (UIAlertAction) -> Void in
+//            let textField = alert.textFields![0] as! UITextField
+//            
+//            //use saveName func to to save to Core Data
+//            self.saveName(textField.text)
+//            self.tableView.reloadData()
+//        }
+//
+//        alert.addTextFieldWithConfigurationHandler {
+//            (textField: UITextField!) -> Void in
+//        }
+//        
+//        alert.addAction(saveAction)
+//        alert.addAction(cancelAction)
+//        
+//        presentViewController(alert, animated: true, completion: nil)
+//    }
     
     
     override func viewDidLoad() {
@@ -68,8 +95,6 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
         title = "Pitch Counter Pro"
         self.tableView.reloadData()
     }
-    
-    
     
     
     // MARK: UITableViewDataSource
@@ -108,12 +133,6 @@ class PlayerListViewController: UIViewController, UITableViewDataSource, UITable
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
-    
-//    func resetNumberOfPitches(cell:CustomPitcherListCell, indexPath: NSIndexPath) {
-//        let thisPerson = people[indexPath.row] as! Person
-//        thisPerson.numberOfPitches = 0
-//        
-//    }
     
     func setNumberOfPitchesForCell(cell:CustomPitcherListCell, indexPath: NSIndexPath) {
         let thisPerson = people[indexPath.row] as! Person

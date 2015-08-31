@@ -19,10 +19,17 @@ class CounterViewController: UIViewController  {
     
     @IBOutlet weak var pitchCounterOutlet: UILabel!
     @IBOutlet weak var minusOnePitchButton: UIButton!
+    @IBOutlet weak var playerGrandTotalPitched: UILabel!
+    @IBOutlet weak var resetPlayerPitchCount: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var totalNumberPitchedInt = currentPlayer.valueForKey("numberOfPitches") as? Int
+        var totalNumberPitchedString:String = String(format: "%i", totalNumberPitchedInt!)
+        playerGrandTotalPitched.text = totalNumberPitchedString
+        
         
         // prints to console core data entity to make sure this view controller received the proper data.
         println(currentPlayer)
@@ -36,6 +43,7 @@ class CounterViewController: UIViewController  {
         //creates a custom back button for the view controller. Uses a custom func titled saveAndGoBack
         let backButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveAndGoBack:")
         self.navigationItem.rightBarButtonItem = backButton
+        
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancel:")
         self.navigationItem.leftBarButtonItem = cancelButton
         
@@ -59,6 +67,20 @@ class CounterViewController: UIViewController  {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func resetPlayerPitchCount(sender: UIButton) {
+        if (currentPlayer != nil) {
+            currentPlayer.setValue(0, forKey: "numberOfPitches")
+            var totalNumberPitchedInt = currentPlayer.valueForKey("numberOfPitches") as? Int
+            var totalNumberPitchedString:String = String(format: "%i", totalNumberPitchedInt!)
+            playerGrandTotalPitched.text = totalNumberPitchedString
+            
+            var error: NSError?
+            if !managedObjectContext!.save(&error) {
+                println("Could not save \(error), \(error?.userInfo)")
+            }
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
