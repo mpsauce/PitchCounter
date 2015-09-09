@@ -69,20 +69,33 @@ class CounterViewController: UIViewController  {
     
     @IBAction func resetPlayerPitchCount(sender: UIButton) {
         
+        var alert = UIAlertController(title: "Reset player total?",
+            message: nil,
+            preferredStyle: .Alert)
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
+            (UIAlertAction) -> Void in
+        }
         
-        if (currentPlayer != nil) {
-            currentPlayer.setValue(0, forKey: "numberOfPitches")
-            var totalNumberPitchedInt = currentPlayer.valueForKey("numberOfPitches") as? Int
+        let saveAction = UIAlertAction(title: "Save", style: .Default) { (UIAlertAction) -> Void in
+            
+        if (self.currentPlayer != nil) {
+            self.currentPlayer.setValue(0, forKey: "numberOfPitches")
+            var totalNumberPitchedInt = self.currentPlayer.valueForKey("numberOfPitches") as? Int
             var totalNumberPitchedString:String = String(format: "%i", totalNumberPitchedInt!)
-            playerGrandTotalPitched.text = totalNumberPitchedString
+            self.playerGrandTotalPitched.text = totalNumberPitchedString
             
             var error: NSError?
-            if !managedObjectContext!.save(&error) {
+            if !self.managedObjectContext!.save(&error) {
                 println("Could not save \(error), \(error?.userInfo)")
             }
         }
     }
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+}
 
     
     override func didReceiveMemoryWarning() {
