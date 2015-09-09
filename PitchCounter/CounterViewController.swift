@@ -69,7 +69,7 @@ class CounterViewController: UIViewController  {
     
     @IBAction func resetPlayerPitchCount(sender: UIButton) {
         
-        var alert = UIAlertController(title: "Reset player total?",
+        var alert = UIAlertController(title: "Reset Total Count?",
             message: nil,
             preferredStyle: .Alert)
         
