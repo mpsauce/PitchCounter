@@ -68,6 +68,9 @@ class CounterViewController: UIViewController  {
     }
     
     @IBAction func resetPlayerPitchCount(sender: UIButton) {
+        
+        
+        
         if (currentPlayer != nil) {
             currentPlayer.setValue(0, forKey: "numberOfPitches")
             var totalNumberPitchedInt = currentPlayer.valueForKey("numberOfPitches") as? Int
